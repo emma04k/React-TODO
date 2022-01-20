@@ -7,9 +7,9 @@ import { TodoItem } from './TodoItem';
 //import './App.css';
 
 const todos = [
-  {text: 'cortar cebolla', complete: false},
-  {text: 'contestar las llamadas perdidas', complete: false},
-  {text: 'echar gasolina a la moto', complete: false}
+  {text: 'cortar cebolla', completed: false},
+  {text: 'contestar las llamadas perdidas 15', completed: true},
+  {text: 'echar gasolina a la moto', completed: false}
 ];
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <TodoSearch/>
         <TodoList>
             {todos.map(todo =>(
-                <TodoItem key={todo.text} text={todo.text}/>
+                <TodoItem key={todo.text} text={todo.text} completed={todo.completed}/>
             ))}
 
         </TodoList>
