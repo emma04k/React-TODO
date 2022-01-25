@@ -5,6 +5,10 @@ body{
   font-family: 'Gochi Hand', cursive;
   font-family: 'Mochiy Pop P One', sans-serif;
   background: #FAEEE7;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 #root{
