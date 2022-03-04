@@ -7,6 +7,7 @@
     margin-top: 24px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
     width: 400px;
+    border-radius: 5px;
 }
 
 .TodoItem-p {
@@ -35,7 +36,8 @@
 .Icon-check {
     position: absolute;
     left: 12px;
-    font-size: 32px;
+    height: 32px;
+    width: 32px;
 }
 .Icon-check--active {
     color: #4caf50;
@@ -43,11 +45,17 @@
 
 .Icon-delete {
     position: absolute;
-    top: -24px;
+    top: -16px;
     right: 0;
+    height: 38px;
+    width: 38px;
 }
 .Icon-delete:hover {
     color: red;
+}
+
+.Icon-check:hover{
+    color: #4caf50;
 }
 
 @media only screen and (max-width: 410px){

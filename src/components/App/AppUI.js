@@ -7,6 +7,8 @@ import {CreateTodoButton} from "../CreateTodoButton/CreateTodoButton";
 import {TodoContext} from "../TodoContext/TodoContext";
 import {Modal} from "../Modal/Modal";
 import {TodoForm} from "../TodoForm/TodoForm";
+import {TodosLoading} from "../TodosLoading/TodosLoading";
+import Swal from "sweetalert2";
 
 function AppUI (){
     const {
@@ -16,16 +18,29 @@ function AppUI (){
         completeTodo,
         deleteTodo,
         openModal,
-        setOpenModal
+        setOpenModal,
     } = React.useContext(TodoContext);
+
+    const errorAlert = () =>  {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Algo Salio Mal!',
+        })
+    }
+
+    const emptyTodo = () => {
+
+    }
+
     return(
         <React.Fragment>
             <TodoCounter/>
             <TodoSearch/>
             <TodoList>
-                {error && <p>¡ERROR! preocupate compa...</p>}
-                {(loading && !error) && <p>Esta cargando no te deseperes...</p>}
-                {(!loading && !searchedTodos.length && !error) && <p>!Crea tu primer TODOS!</p>}
+                {error && errorAlert()}
+                {(loading && !error) && <TodosLoading/>}
+                {(!loading && !searchedTodos.length && !error) && <p>!Crea tu primer TODO!</p>}
 
                 {searchedTodos.map(todo =>(
                     <TodoItem
@@ -40,9 +55,9 @@ function AppUI (){
             </TodoList>
 
             {!!openModal && (
-                <Modal>
+
                     <TodoForm/>
-                </Modal>
+
             )}
             <CreateTodoButton
                 setOpenModal={setOpenModal}

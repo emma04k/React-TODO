@@ -4,8 +4,11 @@ import {TodoContext} from "../TodoContext/TodoContext";
 
 function TodoCounter() {
     const { completedTodos, totalTodos } = React.useContext(TodoContext);
+    let text = 'Has completado ' + completedTodos + ' de '+ totalTodos + ' TODOS';
+    {!totalTodos && (text = 'No Tienes TODOS Pendientes')}
     return(
-        <h2 className="TodoCounter">Has completado {completedTodos} de {totalTodos} TODOS</h2>
+
+        <h2 className="TodoCounter">{text}</h2>
     );
 }
 

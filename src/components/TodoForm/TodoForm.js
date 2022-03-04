@@ -5,12 +5,16 @@ import {Form,Modal,Button,FormControl} from "react-bootstrap"
 
 function TodoForm(){
     const [newTodoValue, setNewTodoValue] = React.useState('');
+
     const {
         addTodo,
         setOpenModal,
-        openModal
+        openModal,
+        totalTodos
     }= React.useContext(TodoContext);
 
+
+    
     const onCancel = ()=>{
         setOpenModal(false);
     }
@@ -26,16 +30,17 @@ function TodoForm(){
         setOpenModal(false)
     }
 
-
-
+    let title='¡Escribe un Nuevo TODO!'
+    {!totalTodos && (title = '¡Escribe Tu Primer TODO!')}
 
 
 
     return(
             <Modal show={openModal} onHide={onCancel} centered>
+
                 <Form onSubmit={onSubmit}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Escribe Tu primer TODO!</Modal.Title>
+                        <Modal.Title>{title}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Control as="textarea" required placeholder="Cortar Cebolla" onChange={onChange}/>

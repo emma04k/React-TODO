@@ -1,5 +1,7 @@
 import React from 'react';
 import './TodoItem.css';
+import {BsFillCheckCircleFill} from 'react-icons/bs';
+import {MdDeleteForever, MdOutlineDeleteForever} from 'react-icons/md';
 
 function TodoItem(props) {
 
@@ -7,23 +9,16 @@ function TodoItem(props) {
     return (
 
         <li className="TodoItem">
-            <span
-            className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
-            onClick={props.onComplete}
+            <BsFillCheckCircleFill className={`Icon Icon-check  ${props.completed && 'Icon-check--active'}`}
+                                   onClick={props.onComplete}/>
 
-
-            >
-                ✔
-            </span>
             <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
                 {props.text}
             </p>
-            <span
+            <MdOutlineDeleteForever
                 className="Icon Icon-delete"
                 onClick={props.onDelete}
-            >
-            X
-            </span>
+            />
         </li>
     );
 
