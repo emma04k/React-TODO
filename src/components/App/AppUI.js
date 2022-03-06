@@ -5,7 +5,6 @@ import {TodoList} from "../TodoList/TodoList";
 import {TodoItem} from "../TodoItem/TodoItem";
 import {CreateTodoButton} from "../CreateTodoButton/CreateTodoButton";
 import {TodoContext} from "../TodoContext/TodoContext";
-import {Modal} from "../Modal/Modal";
 import {TodoForm} from "../TodoForm/TodoForm";
 import {TodosLoading} from "../TodosLoading/TodosLoading";
 import Swal from "sweetalert2";
@@ -29,9 +28,6 @@ function AppUI (){
         })
     }
 
-    const emptyTodo = () => {
-
-    }
 
     return(
         <React.Fragment>

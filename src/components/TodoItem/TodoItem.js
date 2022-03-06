@@ -1,7 +1,7 @@
 import React from 'react';
 import './TodoItem.css';
 import {BsFillCheckCircleFill} from 'react-icons/bs';
-import {MdDeleteForever, MdOutlineDeleteForever} from 'react-icons/md';
+import {MdOutlineDeleteForever} from 'react-icons/md';
 
 function TodoItem(props) {
 
