@@ -25,7 +25,7 @@ function useLocalStorage(itemName,initialValue){
             }
 
 
-        },5000 );
+        },1000 );
 
     });
 
