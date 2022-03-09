@@ -1,20 +1,19 @@
 import React from "react";
-import {TodoContext} from "../TodoContext/TodoContext";
 import {Form,Modal,Button} from "react-bootstrap"
 
 
-function TodoForm(){
-    const [newTodoValue, setNewTodoValue] = React.useState('');
-
-    const {
+function TodoForm(
+    {
         addTodo,
         setOpenModal,
         openModal,
         totalTodos
-    }= React.useContext(TodoContext);
+    }
+){
+    const [newTodoValue, setNewTodoValue] = React.useState('');
 
 
-    
+
     const onCancel = ()=>{
         setOpenModal(false);
     }
