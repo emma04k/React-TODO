@@ -8,6 +8,7 @@ import {TodoContext} from "../TodoContext/TodoContext";
 import {TodoForm} from "../TodoForm/TodoForm";
 import {TodosLoading} from "../TodosLoading/TodosLoading";
 import Swal from "sweetalert2";
+import {TodoHeader} from "../TodoHeader/TodoHeader";
 
 function AppUI (){
     const {
@@ -18,6 +19,10 @@ function AppUI (){
         deleteTodo,
         openModal,
         setOpenModal,
+        completedTodos,
+        totalTodos,
+        searchValue,
+        setSearchValue
     } = React.useContext(TodoContext);
 
     const errorAlert = () =>  {
@@ -31,8 +36,16 @@ function AppUI (){
 
     return(
         <React.Fragment>
-            <TodoCounter/>
-            <TodoSearch/>
+            <TodoHeader>
+                <TodoCounter
+                    completedTodos={completedTodos}
+                    totalTodos={totalTodos}/>
+
+                <TodoSearch
+                    searchValue={searchValue}
+                    setSearchValue={setSearchValue}/>
+
+            </TodoHeader>
             <TodoList>
                 {error && errorAlert()}
                 {(loading && !error) && <TodosLoading/>}
