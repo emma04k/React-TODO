@@ -52,9 +52,12 @@ function App() {
                 error={error}
                 loading={loading}
                 searchedTodos={searchedTodos}
+                totalTodos={totalTodos}
+                searchValue={searchValue}
                 onError={()=>errorAlert()}
                 onLoading={()=><TodosLoading/>}
                 onEmptyTodos={()=><p>!Crea tu primer TODO!</p>}
+                onEmptySearchTodos={(searchText)=><p>No hay resulatados para <i>"{searchText}"</i></p>}
                 render={todo=>(
                     <TodoItem
                         key={todo.text}
