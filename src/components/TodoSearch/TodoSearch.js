@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './TodoSearch.css';
 
 
-function TodoSearch({searchValue, setSearchValue}) {
+function TodoSearch({searchValue, setSearchValue, loading}) {
     const onSearchValueChange = (event)=>{
         setSearchValue(event.target.value);
 
@@ -17,6 +17,7 @@ function TodoSearch({searchValue, setSearchValue}) {
                     placeholder="Cebolla"
                     onChange={onSearchValueChange}
                     value={searchValue}
+                    disabled={loading}
                 />
             </Form.Group>
         </React.Fragment>

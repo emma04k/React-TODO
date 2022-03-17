@@ -21,3 +21,6 @@
     }
 }
 
+.TodoSearch:disabled{
+    opacity: 30%;
+}
