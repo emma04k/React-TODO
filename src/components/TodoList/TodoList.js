@@ -12,7 +12,7 @@ function TodoList(props) {
 
 
             <ul>
-                {props.searchedTodos.map(props.render)}
+                {(!props.loading && !props.error) && props.searchedTodos.map(props.render)}
             </ul>
         </section>
     );

@@ -9,6 +9,8 @@ import {TodoForm} from "../TodoForm/TodoForm";
 import {TodosLoading} from "../TodosLoading/TodosLoading";
 import Swal from "sweetalert2";
 import {TodoHeader} from "../TodoHeader/TodoHeader";
+import {ChangeAlertWithStorageListener} from "../ChangeAlert/ChangeAlert";
+
 
 function App() {
     const {
@@ -23,7 +25,8 @@ function App() {
         totalTodos,
         searchValue,
         setSearchValue,
-        addTodo
+        addTodo,
+        sincronizeTodos
     } = useTodos();
 
     const errorAlert = () =>  {
@@ -83,6 +86,9 @@ function App() {
             )}
             <CreateTodoButton
                 setOpenModal={setOpenModal}
+            />
+            <ChangeAlertWithStorageListener
+                sincronize={sincronizeTodos}
             />
 
         </React.Fragment>
