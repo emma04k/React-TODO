@@ -9,7 +9,7 @@ import {TodoForm} from "../TodoForm/TodoForm";
 import {TodosLoading} from "../TodosLoading/TodosLoading";
 import Swal from "sweetalert2";
 import {TodoHeader} from "../TodoHeader/TodoHeader";
-import {ChangeAlertWithStorageListener} from "../ChangeAlert/ChangeAlert";
+import {ChangeAlert} from "../ChangeAlert/ChangeAlert";
 
 
 function App() {
@@ -87,7 +87,7 @@ function App() {
             <CreateTodoButton
                 setOpenModal={setOpenModal}
             />
-            <ChangeAlertWithStorageListener
+            <ChangeAlert
                 sincronize={sincronizeTodos}
             />
 
